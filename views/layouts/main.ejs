@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookings/<%= locals.title %> - JDevshington</title>
+    <meta name="description" content="<%= locals.description %>">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- custom styles/Bootstrap -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="top"></div>
+    <div class="white__line"></div>
+    <div class="container">
+        <%- include('../partials/header.ejs') %>
+        
+        <main class="main">
+            <%- body %>
+
+            <div id="backdrop" class="backdrop"></div>
+            <div id="menu" class="menu clearfix">
+                <button type="button" class="btn-close" aria-label="Close" onclick="closeMenu()"><i class="fa-solid fa-circle-xmark"></i></button>
+                <h4><strong>Bookings by JDev - menu</strong></h4>
+                <hr>
+                <ul>
+                  <a href="/"><li><i class="fa-solid fa-house"></i> Home</li></a>
+                  <a href="/search"><li><i class="fa-solid fa-magnifying-glass"></i> Search bookings</li></a>
+                </ul>
+                <hr>
+                <center>
+                    <span>If you need support or want to report something, do it <a href="mailto:jdevshington@gmail.com">here <i class="fa-solid fa-arrow-up-right-from-square"></i></a></span>
+                </center>
+            </div>
+        </main>
+    </div>
+    <%- include('../partials/footer.ejs') %>
+
+    <!-- custom scripts -->
+    <script src="js/scripts.js"></script>
+    <!-- Bootstrap -->
+    <script src="/js/bootstrap.min.js"></script>
+    <!-- JQ -->
+    <script src="js/jquery.min.js"></script> 
+</body>
+</html>

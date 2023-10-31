@@ -1,0 +1,81 @@
+<br />
+<!-- breadcrumb -->
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">booking</a></li>
+    <li class="breadcrumb-item active" aria-current="page">
+      <%= locals.dir %>
+    </li>
+    <div class="conStatus">
+      Status:
+      <span><%= status %> <i class="fa-solid fa-circle fa-fade"></i></span>
+    </div>
+  </ol>
+</nav>
+
+<!-- search -->
+<form action="" method="">
+  <div class="mb-3">
+    <label for="exampleInputSearch1" class="form-label">Search here</label>
+    <div id="searchBookings" class="form-text">
+      Use the booking ID, email, or name asociated with your
+      booking/appointment.
+    </div>
+    <input
+      type="search"
+      class="form-control"
+      id="exampleInputSearch1"
+      name="searchQuery"
+      aria-describedby="searchBookings"
+      placeholder="bookingID, name or email associated with the booking/appointment"
+      value="<%= searchQ %>"
+      required
+    />
+    <br /><button type="submit" class="btn btn-primary search_btn">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </button>
+  </div>
+</form>
+<hr />
+
+<% if (results && results.length > 0) { %>
+<hr />
+<h2>
+  Found <%= results.length %> <% if (results.length > 1) { %> matching records
+  <%} else { %> matching record <% } %> for "<%= searchQ %>"
+</h2>
+<div class="results__container">
+  <% results.forEach(function(result) { %>
+  <div class="result">
+    <div class="result_top clearfix">
+      <div class="bookingId">
+        <strong>Booking </strong>#<%= result.bookingID %>
+      </div>
+      <div class="detail">
+        <a href="/detail-view?id=<%= result.bookingID %>">Open in detail</a>
+      </div>
+    </div>
+    <hr />
+    <div class="result_div name">
+      <h4><strong>Name:</strong></h4>
+      <%= result.name %>
+    </div>
+    <div class="result_div email">
+      <h4><strong>Email:</strong></h4>
+      <%= result.email %>
+    </div>
+    <div class="result_div date">
+      <h4><strong>Date:</strong></h4>
+      <%= result.date %>
+    </div>
+  </div>
+  <br />
+  <% }); %>
+</div>
+<br />
+<% } else { %>
+<hr />
+<center>
+  <p><strong>Nothing found</strong></p>
+</center>
+<% } %>

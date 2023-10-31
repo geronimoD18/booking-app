@@ -1,0 +1,86 @@
+<br />
+<!-- breadcrumb -->
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">booking</a></li>
+    <li class="breadcrumb-item active" aria-current="page">
+      <%= locals.dir %>
+    </li>
+    <div class="conStatus">
+      Status:
+      <span><%= status %> <i class="fa-solid fa-circle fa-fade"></i></span>
+    </div>
+  </ol>
+</nav>
+<br />
+
+<!-- booking details -->
+<div class="booking_detailed_container">
+  <div>
+    <strong><i class="fa-solid fa-circle-info"></i> Booking Details</strong>
+  </div>
+  <hr />
+  <div class="peso">
+    <span class="text-muted">
+      <b># Booking ID:</b>
+    </span>
+    <p>
+      <b><%= detail.bookingID %></b>
+    </p>
+    <span class="text-muted">
+      <b><i class="fa-solid fa-pencil"></i> Event title</b>
+    </span>
+    <p>
+      <b><%= detail.booking_title %></b>
+    </p>
+    <span class="text-muted">
+      <b><i class="fa-solid fa-file-lines"></i> Event details</b>
+    </span>
+    <p>
+      <b><%= detail.booking_details %></b>
+    </p>
+    <span class="text-muted">
+      <b>Date & Time</b>
+    </span>
+    <p>
+      <b><i class="fa-solid fa-calendar-check"></i> <%= detail.time %>, <%= detail.date %></b>
+    </p>
+    <span class="text-muted">
+      <b>Booked for</b>
+    </span>
+    <p>
+      <span class="badge text-bg-primary">
+        <%= detail.name %>
+      </span>
+    </p>
+  </div>
+  <hr />
+  <div>
+    <strong class="fz15"><i class="fa-solid fa-user"></i> Profile</strong>
+  </div>
+  <hr />
+  <div class="peso">
+    <span class="text-muted">
+      <b><i class="fa-solid fa-user"></i> Name:</b>
+    </span>
+    <p>
+      <b><%= detail.name %></b>
+    </p>
+    <span class="text-muted">
+      <b><i class="fa-solid fa-square-envelope"></i> Email:</b>
+    </span>
+    <p>
+      <b><%= detail.email %></b>
+    </p>
+    <hr />
+    <span class="text-muted">
+      <b><i class="fa-solid fa-file-invoice-dollar"></i> Price</b>
+    </span>
+    <p>
+      <b>Free</b>
+    </p>
+  </div>
+  <div class="email_btn">
+    <button id="sendMail" class="btn btn-success"><i class="fa-solid fa-envelope"></i></button>
+  </div>
+</div><br><br>

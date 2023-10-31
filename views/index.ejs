@@ -1,0 +1,61 @@
+<br>
+<!-- breadcrumb -->
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item active" aria-current="page"><%= locals.dir %></li>
+        <div class="conStatus">
+            Status: <span><%= status %> <i class="fa-solid fa-circle fa-fade"></i></span>
+        </div>
+    </ol>
+</nav>
+
+<!-- appointment form -->
+<h2><u>Create your appointment today</u></h2>
+<p>Set up an appointment right now or <a href="/search">find one</a></p>
+<hr>
+<form action="/submit-booking" method="POST">
+    <div class="mb-3">
+        <input type="hidden" readonly class="form-control" name="bookingID" id="idGen" placeholder="Booking ID" value="">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Your name <sup>(required)</sup></label>
+        <input type="text" class="form-control" name="name" id="exampleFormControlInput1" placeholder="John Doe" required>
+    </div><br>
+    <div class="mb-3">
+        <label for="exampleFormControlInput2" class="form-label">Email address <sup>(required)</sup></label>
+        <input type="email" class="form-control" name="email" id="exampleFormControlInput2" placeholder="name@example.com" required>
+    </div><br>
+    <div class="mb-3">
+        <label for="exampleFormControlInput3" class="form-label">Event title <sup style="color: #337ab7;">(preset)</sup></label>
+        <input type="text" class="form-control" readonly name="booking_title" id="exampleFormControlInput3" value="Lorem ipsum dolor">
+    </div><br>
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Reservation details <sup style="color: #337ab7;">(preset)</sup></label>
+        <textarea class="form-control" readonly name="booking_details" id="exampleFormControlTextarea1" rows="3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec ante eget lectus ullamcorper facilisis eu ac orci. Donec pulvinar felis vel velit euismod feugiat. Suspendisse nec tincidunt magna.</textarea>
+    </div>
+    <hr>
+    <h2><u>Select the time and date</u></h2>
+    <p>These fields display the current timestamp, but you have to select the time/date for the appointment</p>
+    <div class="mb-3">
+        <label for="exampleFormControlInput4" class="form-label">Time <sup>(required)</sup></label>
+        <input type="time" class="form-control" name="time" id="exampleFormControlInput4" value="<%= currentTime %>">
+    </div><br>
+    <div class="mb-3">
+        <label for="exampleFormControlInput5" class="form-label">Date <sup>(required)</sup></label>
+        <input type="date" class="form-control" name="date" id="exampleFormControlInput5" value="<%= currentDate %>">
+    </div><br>
+    <div class="mb-3 clearfix">
+        <button type="submit" class="btn btn-primary">Save booking <i class="fa-solid fa-check"></i></button>
+    </div>
+</form>
+<br>
+<hr>
+<br>
+<div class="about__sw">
+    <h2><u>Learn a bit about this software</u></h2>
+    <p>Bookings by JDev is a booking example of what your booking/appointment page would be looking like. Of course, this is only a template, and I would be customizing your web app as you like and using the components you prefer.</p>
+    <p>I built this software because I see the need some startups or even major businesses may have, in terms of a booking platform. If you're a developer, you can also contribute to it, plus, I accept any suggestions. You can check it out in the <a href="https://www.github.com/geronimoD18/booking-app" target="_blank">GitHub repo</a>.</p>
+    <p>Also, if there is any suggestion, feel free to send it out to <a href="mailto:jdevshington@gmail.com">this email</a>. Expect a response within 24 hours.</p>
+    <br>
+    <p>Feel free to reach out to me if you want anything web-related built. Thanks for taking the time to check this project out ;)</p>
+</div><br>
